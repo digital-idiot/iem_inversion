@@ -1,0 +1,6 @@
+numpy~=1.24.3
+torch~=2.0.0+cu118
+onnx2torch~=1.5.8
+einops~=0.6.1
+rasterio~=13.6
+rich~=13.4.1

@@ -1,0 +1,26 @@
+{
+    "block_height": 1024,
+    "block_width": 1024,
+    "lambda_wave": 12.6,
+    "theta": 48,
+    "dst_dir": "prediction",
+    "model_path": "model/inversion_model.onnx",
+    "image_sets": {
+        "NPW_128": {
+            "S1": "data/NP_70to90N_0to360E_S1_0to180_MOS_128ppd_140902C.cub",
+            "S2": "data/NP_70to90N_0to360E_S2_0to180_MOS_128ppd_140902C.cub"
+        },
+        "SPW_128": {
+            "S1": "data/SP_70to90S_0to360E_S1DT_0-180DN_MOS_128ppd_150614_AVG_C.cub",
+            "S2": "data/SP_70to90S_0to360E_S2DT_0-180DN_MOS_128ppd_150614_AVG_C.cub"
+        },
+        "NPE_128": {
+            "S1": "data/NP_70to90N_0to360E_S1_180to360_MOS_128ppd_140902C.cub",
+            "S2": "data/NP_70to90N_0to360E_S2_180to360_MOS_128ppd_140902C.cub"
+        },
+        "SPE_128": {
+            "S1": "data/SP_70to90S_0to360E_S1DT_180-360DN_MOS_128ppd_150614_AVG_C.cub",
+            "S2": "data/SP_70to90S_0to360E_S2DT_180-360DN_MOS_128ppd_150614_AVG_C.cub"
+        }
+    }
+}
