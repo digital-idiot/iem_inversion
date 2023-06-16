@@ -80,6 +80,13 @@ def predict(
                             window=win, masked=True, boundless=False
                         ), "c h w -> (h w) c"
                     )
+                    if isinstance(tile1.mask, (bool, np.bool_)):
+                        tile1.mask = np.full(
+                            shape=tile1.shape,
+                            fill_value=False,
+                            dtype=bool
+                        )
+
                     tile2 = rearrange(
                         src2.read(
                             window=win,
@@ -87,6 +94,13 @@ def predict(
                             boundless=False),
                         "c h w -> (h w) c"
                     )
+                    if isinstance(tile1.mask, (bool, np.bool_)):
+                        tile2.mask = np.full(
+                            shape=tile2.shape,
+                            fill_value=False,
+                            dtype=bool
+                        )
+
                     valid_mask = np.logical_not(
                         np.any(
                             np.logical_or(tile1.mask, tile2.mask),
@@ -94,6 +108,7 @@ def predict(
                             keepdims=False
                         )
                     )
+
                     pred_tile = np.full(
                         shape=((win.height*win.width),meta["count"]),
                         fill_value=meta["nodata"], dtype=meta["dtype"]
